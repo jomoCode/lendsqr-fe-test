@@ -1,8 +1,14 @@
 .loginLeftContainer {
   display: flex;
-  flex: 1;
   justify-content: center;
   background-color: #ffffff;
+ height: fit-content;
+ padding-top: 40px;
+ @media (min-width: 768px) {
+  flex: 1;
+  height:100vh;
+  padding-top: 0px;
+  }
 }
 
 .loginLeftInner {
@@ -22,6 +28,10 @@
 .mainImage {
   width: 100%;
   height: auto;
+  display: none;
+  @media (min-width: 768px) {
+ display: block;
+ }
 }
 
 .logoImageWrapper {
