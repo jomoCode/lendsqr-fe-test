@@ -1,8 +1,8 @@
-"use client"
+"use client";
 
 import { useForm } from "react-hook-form";
 import { useState } from "react";
-import styles from './LoginForm.module.scss'
+import styles from "./LoginForm.module.scss";
 import Link from "next/link";
 
 type FormData = {
@@ -10,11 +10,22 @@ type FormData = {
   password: string;
 };
 
-const LoginForm = () =>  {
-  const { register, handleSubmit, formState: { errors } } = useForm<FormData>();
+type LoginFormProps = {
+  handleLogin: (data: FormData) => Promise<void>;
+  loading: boolean;
+};
+
+const LoginForm = ({ handleLogin, loading }: LoginFormProps) => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<FormData>();
   const [showPassword, setShowPassword] = useState(false);
 
-  const onSubmit = (data: FormData) => console.log(data);
+  const onSubmit = (data: FormData) => {
+    handleLogin(data);
+  };
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className={styles.formContainer}>
@@ -42,14 +53,19 @@ const LoginForm = () =>  {
           {showPassword ? "Hide" : "Show"}
         </button>
       </div>
-      {errors.password && <p className={styles.error} >{errors.password.message}</p>}
+      {errors.password && (
+        <p className={styles.error}>{errors.password.message}</p>
+      )}
 
-
-
-        <Link href={'/'} > <p className={styles.forgotPassword}>FORGOT PASSWORD?</p> </Link>
-      <button type="submit" className={styles.submitButton}>Login</button>
+      <Link href={"/"}>
+        {" "}
+        <p className={styles.forgotPassword}>FORGOT PASSWORD?</p>{" "}
+      </Link>
+      <button disabled={loading} type="submit" className={styles.submitButton}>
+        {loading ? 'loading...' : "Login"}
+      </button>
     </form>
   );
-}
+};
 
 export { LoginForm };
