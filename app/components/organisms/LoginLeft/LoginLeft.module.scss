@@ -1,0 +1,41 @@
+.loginLeftContainer {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  background-color: #ffffff;
+}
+
+.loginLeftInner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: 90%;
+  gap: 20px;
+  @media (min-width: 768px) {
+    gap: 60;
+    width: 550px;
+    height: auto;
+  }
+}
+
+.mainImage {
+  width: 100%;
+  height: auto;
+}
+
+.logoImageWrapper {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.logoImage {
+  width: 30%;
+  max-height: 38px;
+  max-width: 178px;
+  margin: 0;
+}
