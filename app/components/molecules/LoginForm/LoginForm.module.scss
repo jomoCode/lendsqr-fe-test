@@ -1,0 +1,57 @@
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  height: fit-content;
+}
+
+.loginInputs {
+  border-width: 2px;
+  padding: 0 10px;
+  border: 2px solid #545F7D26;
+  background-color: white;
+  height: 50px;
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 10px;
+  color:#000000;
+}
+
+.passwordWrapper {
+  position: relative;
+  width: 100%;
+}
+
+.error{
+    color: #c42b10;
+}
+
+
+.forgotPassword {
+  color: #39CDCC;
+  font-size: small;
+}
+
+.toggleButton {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  color: #39CDCC;
+  cursor: pointer;
+  font-weight: 500;
+  border-radius: 10px;
+}
+
+.submitButton {
+  height: 50px;
+  background-color: #39CDCC;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 10px;
+}
