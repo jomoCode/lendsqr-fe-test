@@ -1,0 +1,38 @@
+.headerContainer {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 15px;
+}
+
+.logoImageWrapper {
+  max-width: 144px;
+  aspect-ratio: 4.8;
+}
+
+.logoImage {
+  object-fit: contain;
+}
+
+.searchContainer {
+  width: 200px;
+  height: 30px;
+  background-color: aqua;
+}
+
+.leftContent {
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+
+  gap: 150px;
+}
+.rightContent {
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  justify-content: flex-end;
+  gap: 10px;
+}
