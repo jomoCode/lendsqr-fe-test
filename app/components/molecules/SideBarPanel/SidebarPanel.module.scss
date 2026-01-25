@@ -1,0 +1,30 @@
+.sideBarPanelContainer {
+  width: 100%;
+  padding: 5px 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+
+  background-color: transparent;
+
+  .sideBarIcon,
+  .sideBarText {
+    color: #213f7d99;
+  }
+}
+
+.active {
+  background-color: #39cdcd11;
+  border-left-width: 3px;
+  border-left-color: #39cdcc;
+
+  .sideBarIcon,
+  .sideBarText {
+    color: #213f7d;
+  }
+}
+
+.sideBarText {
+  font-size: 19px;
+}
