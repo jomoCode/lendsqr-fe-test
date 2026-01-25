@@ -28,7 +28,7 @@ const Header = () => {
         <div className={styles.profileImageWrapper}> 
         <Image src="/assets/images/profile.png" alt={"profile image"} width={40} height={40} className={styles.profileImage}/>
         </div>
-        <div  className={styles.dropDown}>name 
+        <div  className={styles.dropDown}><p>name</p> 
           <MdArrowDropDown size={19}/>
         </div>
       </div>
