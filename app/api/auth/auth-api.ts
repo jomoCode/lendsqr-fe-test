@@ -1,11 +1,13 @@
+
 import { apiAsync } from "./api";
 
 export const loginAsync = async (email: string, password: string) => {
+  const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL;
   if (!email || !password)
     throw Error("Request must contain username and password");
   try {
     const users: { email: string; password: string }[] = await apiAsync(
-      "https://xxxx.mockapi.io/api/v1/users",
+      `${baseUrl}/users`,
     );
 
     if (users) {
