@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import styles from "./header.module.scss";
+import { SearchBar } from "../../molecules/SearchBar/SearchBar";
 
 const Header = () => {
   return (
@@ -16,7 +17,7 @@ const Header = () => {
           />
         </div>
 
-        <div className={styles.searchContainer}>search bar</div>
+        <div className={styles.searchContainer}><SearchBar/></div>
       </div>
 
 
