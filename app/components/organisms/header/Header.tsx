@@ -2,7 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 import styles from "./header.module.scss";
 import { SearchBar } from "../../molecules/SearchBar/SearchBar";
-
+import {FiBell} from "react-icons/fi"
+import { MdArrowDropDown } from "react-icons/md";
 const Header = () => {
   return (
     <header className={styles.headerContainer}>
@@ -12,7 +13,7 @@ const Header = () => {
             src={"/assets/images/logo.png"}
             alt="company logo"
             width={144}
-            height={30}
+            height={40}
             className={styles.logoImage}
           />
         </div>
@@ -22,10 +23,14 @@ const Header = () => {
 
 
       <div className={styles.rightContent}>
-        <Link href={"/"}>Docs</Link>
-        <div>notifiction</div>
-        <Image src="" alt={"profile image"} width={30} height={30} />
-        <div>name</div>
+        <Link href={"/"} className={styles.link}>Docs</Link>
+        <FiBell size={24} fill={'#ffffff'} />
+        <div className={styles.profileImageWrapper}> 
+        <Image src="/assets/images/profile.png" alt={"profile image"} width={40} height={40} className={styles.profileImage}/>
+        </div>
+        <div  className={styles.dropDown}>name 
+          <MdArrowDropDown size={19}/>
+        </div>
       </div>
     </header>
   );
