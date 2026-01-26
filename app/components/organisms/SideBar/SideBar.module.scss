@@ -1,0 +1,27 @@
+.mainContianer {
+  background-color: #ffffff;
+  width: 250px;
+  height: fit-content;
+  padding: 40px 0px;
+  gap: 10px;
+  position: absolute;
+  top:0%;
+  left: 0%;
+}
+
+.organization {
+  color: #213f7d;
+  font-size: 19px;
+  display: flex;
+  flex-direction: row;
+  padding: 2px 5px 2px 20px;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.sectionHeaders {
+  color: #545f7d;
+  font-size: 12px;
+  padding: 2px 5px 2px 20px;
+  margin-top: 10;
+}
