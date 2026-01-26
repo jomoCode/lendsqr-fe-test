@@ -1,5 +1,5 @@
 import styles from "./SidebarPanel.module.scss";
-import * as MyIcons from "react-icons/md";
+import * as MyIcons from "react-icons/bs";
 import clsx from "clsx";
 
 type SidebarPanelProp = {

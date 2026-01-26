@@ -1,41 +1,40 @@
-
-export type SidebarItem = (typeof sidebarSections)[number]["items"][number];
-
+export type SidebarItem =
+  (typeof sidebarSections)[number]["items"][number];
 
 export const sidebarSections = [
   {
     title: "CUSTOMERS",
     items: [
-      { name: "Users", icon: "MdPeople" },
-      { name: "Guarantors", icon: "MdVerifiedUser" },
-      { name: "Loans", icon: "MdRequestQuote" },
-      { name: "Decision Models", icon: "MdModelTraining" },
-      { name: "Savings", icon: "MdSavings" },
-      { name: "Loan Requests", icon: "MdAssignment" },
-      { name: "Whitelist", icon: "MdChecklist" },
-      { name: "Karma", icon: "MdSecurity" },
+      { name: "Users", icon: "BsPeople" },
+      { name: "Guarantors", icon: "BsPeopleFill" },
+      { name: "Loans", icon: "BsCashStack" },
+      { name: "Decision Models", icon: "BsDiagram3" },
+      { name: "Savings", icon: "BsPiggyBank" },
+      { name: "Loan Requests", icon: "BsCashCoin" },
+      { name: "Whitelist", icon: "BsCheck2Square" },
+      { name: "Karma", icon: "BsShieldLock" },
     ],
   },
   {
     title: "BUSINESSES",
     items: [
-      { name: "Organization", icon: "MdBusiness" },
-      { name: "Loan Products", icon: "MdAccountBalance" },
-      { name: "Savings Products", icon: "MdSavings" },
-      { name: "Fees and Charges", icon: "MdPayments" },
-      { name: "Transactions", icon: "MdSwapHoriz" },
-      { name: "Services", icon: "MdMiscellaneousServices" },
-      { name: "Service Account", icon: "MdAccountBox" },
-      { name: "Settlements", icon: "MdFactCheck" },
-      { name: "Reports", icon: "MdAssessment" },
+      { name: "Organization", icon: "BsBuilding" },
+      { name: "Loan Products", icon: "BsBank" },
+      { name: "Savings Products", icon: "BsPiggyBankFill" },
+      { name: "Fees and Charges", icon: "BsCreditCard" },
+      { name: "Transactions", icon: "BsArrowLeftRight" },
+      { name: "Services", icon: "BsTools" },
+      { name: "Service Account", icon: "BsPersonBadge" },
+      { name: "Settlements", icon: "BsClipboardCheck" },
+      { name: "Reports", icon: "BsBarChart" },
     ],
   },
   {
     title: "SETTINGS",
     items: [
-      { name: "Preferences", icon: "MdTune" },
-      { name: "Fees and Pricing", icon: "MdPriceCheck" },
-      { name: "Audit Logs", icon: "MdHistory" },
+      { name: "Preferences", icon: "BsSliders" },
+      { name: "Fees and Pricing", icon: "BsTag" },
+      { name: "Audit Logs", icon: "BsClockHistory" },
     ],
   },
 ] as const;
