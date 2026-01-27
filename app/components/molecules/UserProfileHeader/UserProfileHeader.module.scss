@@ -1,0 +1,54 @@
+.userHeader {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  color: #213f7d;
+}
+
+.userInfo {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  h2 {
+    font-size: 22px;
+    color: #213f7d;
+  }
+
+  .userId {
+    font-size: 14px;
+    opacity: 0.9;
+  }
+}
+
+.avatar {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  background: #e5e9f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.divider {
+  width: 1px;
+  height: 64px;
+  background: #e5e9f0;
+  margin: 0 32px;
+}
+
+.tier span {
+  font-size: 14px;
+  opacity: 0.6;
+}
+
+.balance h3 {
+  font-size: 22px;
+  color: #213f7d;
+}
+
+.balance p {
+  font-size: 14px;
+  opacity: 0.6;
+}
