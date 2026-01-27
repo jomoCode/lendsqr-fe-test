@@ -1,7 +1,7 @@
 .container {
   display: flex;
   flex-direction: column;
-  min-width: 100vw;
+  width: 100vw;
   min-height: 100vh;
 }
 
@@ -13,27 +13,29 @@
 .dashboardStatusCard {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     width: 100%;
+    height: auto;
     justify-content: space-between;
     margin-bottom: 30px;
 }
 
 .tableWrapper{
-    width: 1280px;
+    width: fit-content;
     height: auto;
 }
 
 .UserTableStatusContainer{
     display: flex;
-    width: 100%;
-    padding:5vw;
+    width:100%;
+    padding:50px 0px;
     flex-direction: column;
     align-items: center;
 
 }
 .UserTableStatusWrappper{
     display: flex;
-    width:1280px;
+    min-width:fit-content;
     flex-direction: column;
     align-items: center;
     

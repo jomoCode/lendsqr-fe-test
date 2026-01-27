@@ -3,7 +3,7 @@ import { SideBar } from "../../organisms/SideBar/SideBar";
 import { StatusCard } from "../../organisms/StatusCard/StatusCard";
 import { statusCards } from "../../organisms/StatusCard/statusCard.data";
 import { UserTable } from "../../organisms/UserTable/UserTable";
-import styles from "./Dashboard.module.scss";
+import styles from "./DashboardTemplate.module.scss";
 
 const DashboardTemplate = () => {
   return (
