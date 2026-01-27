@@ -5,10 +5,8 @@ import { AgGridReact } from "ag-grid-react";
 import "ag-grid-community/styles/ag-theme-quartz.css";
 import { ColDef } from "ag-grid-community";
 
-import { ModuleRegistry, AllCommunityModule } from 'ag-grid-community';
+import { ModuleRegistry, AllCommunityModule } from "ag-grid-community";
 ModuleRegistry.registerModules([AllCommunityModule]);
-
-
 
 type TableProps = { rowData: object[]; columnDefs: ColDef[] };
 
@@ -33,6 +31,8 @@ const Table = ({ rowData, columnDefs }: TableProps) => {
         headerHeight={60}
         suppressRowHoverHighlight
         domLayout="autoHeight"
+        pagination={true}
+        paginationPageSize={10}
       />
       <style jsx global>{`
         /* ===== HEADER CELL LAYOUT ===== */
@@ -132,6 +132,34 @@ const Table = ({ rowData, columnDefs }: TableProps) => {
 
         .ag-header-row-separator {
           display: none !important;
+        }
+
+        /* ===== FOOTER STYLING ===== */
+        .ag-paging-panel {
+          width: 100% !important;
+          display: flex !important;
+          justify-content: space-between !important;
+          align-items: center !important;
+          padding: 12px !important;
+          background-color: white !important;
+          border-top: 1px solid #e3e9f3 !important;
+          gap: 12px !important;
+        }
+
+        .ag-paging-panel .ag-paging-button {
+          margin: 0 !important;
+        }
+
+        .ag-paging-left-part,
+        .ag-paging-center-part,
+        .ag-paging-right-part {
+          display: flex !important;
+          align-items: center !important;
+          gap: 8px !important;
+        }
+
+        .ag-bottom {
+          width: 100% !important;
         }
       `}</style>
     </div>
