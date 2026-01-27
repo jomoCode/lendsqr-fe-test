@@ -40,10 +40,11 @@
 }
 
 .userTableWrapper {
-  padding: 10px;
+  padding: 0px;
   background-color: #ffffff;
   width: fit-content;
   height: auto;
   border-radius: 6px;
+  overflow: hidden;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
