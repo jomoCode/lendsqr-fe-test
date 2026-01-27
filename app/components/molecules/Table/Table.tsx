@@ -33,6 +33,7 @@ const Table = ({ rowData, columnDefs }: TableProps) => {
         domLayout="autoHeight"
         pagination={true}
         paginationPageSize={10}
+        suppressHorizontalScroll={false}
       />
       <style jsx global>{`
         /* ===== HEADER CELL LAYOUT ===== */
@@ -160,6 +161,75 @@ const Table = ({ rowData, columnDefs }: TableProps) => {
 
         .ag-bottom {
           width: 100% !important;
+        }
+
+        /* ===== MOBILE RESPONSIVE STYLING ===== */
+        @media (max-width: 768px) {
+          .custom-header-cell {
+            padding-left: 8px !important;
+            padding-right: 8px !important;
+          }
+
+          .ag-header-cell-text {
+            font-size: 0.65rem !important;
+            font-weight: 500 !important;
+          }
+
+          .custom-cell {
+            font-size: 0.7rem !important;
+            color: #545f7d !important;
+          }
+
+          .ag-paging-panel {
+            padding: 8px !important;
+            gap: 8px !important;
+            flex-wrap: wrap !important;
+            justify-content: center !important;
+          }
+
+          .ag-paging-left-part,
+          .ag-paging-center-part,
+          .ag-paging-right-part {
+            gap: 4px !important;
+            font-size: 0.7rem !important;
+          }
+
+          .ag-paging-panel .ag-paging-button {
+            padding: 4px 6px !important;
+            font-size: 0.65rem !important;
+          }
+        }
+
+        @media (max-width: 640px) {
+          .custom-header-cell {
+            padding-left: 6px !important;
+            padding-right: 6px !important;
+          }
+
+          .ag-header-cell-text {
+            font-size: 0.6rem !important;
+          }
+
+          .custom-cell {
+            font-size: 0.65rem !important;
+          }
+
+          .ag-paging-panel {
+            padding: 6px !important;
+            gap: 4px !important;
+          }
+
+          .ag-paging-left-part,
+          .ag-paging-center-part,
+          .ag-paging-right-part {
+            gap: 3px !important;
+            font-size: 0.6rem !important;
+          }
+
+          .ag-paging-panel .ag-paging-button {
+            padding: 3px 5px !important;
+            font-size: 0.6rem !important;
+          }
         }
       `}</style>
     </div>
