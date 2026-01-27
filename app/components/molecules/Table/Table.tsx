@@ -4,7 +4,6 @@ import { CSSProperties } from "react";
 import { AgGridReact } from "ag-grid-react";
 import "ag-grid-community/styles/ag-theme-quartz.css";
 import { ColDef } from "ag-grid-community";
-import "@/app/lib/agGrid.client";
 
 type TableProps = { rowData: object[]; columnDefs: ColDef[] };
 
