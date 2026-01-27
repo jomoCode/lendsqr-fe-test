@@ -1,3 +1,27 @@
+
+.userTableContainer {
+  width: 90vw;
+  max-width:1300px;
+  height: auto;
+  background-color: #ffffff;
+
+  @media (min-width: 800px) {
+
+  width: 70vw;
+  max-width:1300px;
+  }
+}
+
+.userTableWrapper {
+  padding: 0px;
+  background-color: #ffffff;
+  width: fit-content;
+  height: auto;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
 .status {
   padding: 0px 15px;
   border-radius: 50px;
@@ -33,20 +57,3 @@
   font-size: 1.125rem;
 }
 
-.userTableContainer {
-  width: 70vw;
-  max-width:1300px;
-  height: auto;
-  background-color: #ffffff;
-
-}
-
-.userTableWrapper {
-  padding: 0px;
-  background-color: #ffffff;
-  width: fit-content;
-  height: auto;
-  border-radius: 6px;
-  overflow: hidden;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
