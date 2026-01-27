@@ -5,6 +5,11 @@ import { AgGridReact } from "ag-grid-react";
 import "ag-grid-community/styles/ag-theme-quartz.css";
 import { ColDef } from "ag-grid-community";
 
+import { ModuleRegistry, AllCommunityModule } from 'ag-grid-community';
+ModuleRegistry.registerModules([AllCommunityModule]);
+
+
+
 type TableProps = { rowData: object[]; columnDefs: ColDef[] };
 
 const Table = ({ rowData, columnDefs }: TableProps) => {
