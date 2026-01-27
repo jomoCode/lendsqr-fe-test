@@ -1,0 +1,43 @@
+
+.section {
+  margin-bottom: 32px;
+  // color:;
+}
+
+.sectionTitle {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 24px;
+  color: #213F7D;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 24px 32px;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  font-size: 12px;
+  text-transform: uppercase;
+  opacity: 0.6;
+  color: #545F7D;
+  margin-bottom: 6px;
+}
+
+.value {
+  font-size: 14px;
+  font-weight: 500;
+  color:#545F7D;
+}
+
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
