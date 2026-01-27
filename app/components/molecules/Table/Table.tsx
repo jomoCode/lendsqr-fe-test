@@ -95,7 +95,7 @@ const Table = ({ rowData, columnDefs }: TableProps) => {
         /* ===== TEXT STYLING ===== */
         .ag-header-cell-text {
           font-weight: 500 !important;
-          font-size: 14px !important;
+          font-size: 12px !important;
           line-height: 1 !important;
           color: #545f7d !important;
         }
