@@ -1,0 +1,21 @@
+.userProfileHeading {
+  width: 1020px;
+  padding: 20px 20px 0px 20px;
+  height: fit-content;
+  background: #ffffff;
+  border-radius: 8px;
+  margin-bottom: 32px;
+
+  box-shadow:
+    0 4px 8px rgba(0, 0, 0, 0.04),
+    0 16px 32px rgba(0, 0, 0, 0.06);
+}
+.userProfileHeading {
+  transition: box-shadow 0.2s ease;
+
+  &:hover {
+    box-shadow:
+      0 6px 12px rgba(0, 0, 0, 0.06),
+      0 20px 40px rgba(0, 0, 0, 0.08);
+  }
+}
