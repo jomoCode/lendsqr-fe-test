@@ -1,0 +1,41 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  min-width: 100vw;
+  min-height: 100vh;
+}
+
+.dashboardContent {
+  display: flex;
+  flex-direction: row;
+}
+
+.dashboardStatusCard {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.tableWrapper{
+    width: 1280px;
+    height: auto;
+}
+
+.UserTableStatusContainer{
+    display: flex;
+    width: 100%;
+    padding:5vw;
+    flex-direction: column;
+    align-items: center;
+
+}
+.UserTableStatusWrappper{
+    display: flex;
+    width:1280px;
+    flex-direction: column;
+    align-items: center;
+    
+
+}
