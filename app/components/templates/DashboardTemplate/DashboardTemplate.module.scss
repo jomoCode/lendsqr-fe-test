@@ -8,36 +8,97 @@
 .dashboardContent {
   display: flex;
   flex-direction: row;
+  position: relative;
+}
+
+.sidebarWrapper {
+  width: 250px;
+  flex-shrink: 0;
 }
 
 .dashboardStatusCard {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    width: 100%;
-    height: auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  justify-content: space-around;
+  gap: 5px;
+  width: 100%;
+  height: auto;
+  margin-bottom: 30px;
+
+  > .statCardContainer {
+    flex: 1 1 45%;
+    max-width: 300px;
+    min-width: 160px;
+  }
+  
+  @media (min-width: 970px) {
+    padding: 0px;
+    gap: 5px;
     justify-content: space-between;
-    margin-bottom: 30px;
+  }
 }
 
-.tableWrapper{
-    width: fit-content;
-    height: auto;
+.tableWrapper {
+  width: fit-content;
+  height: auto;
 }
 
-.UserTableStatusContainer{
-    display: flex;
-    width:100%;
-    padding:50px 0px;
-    flex-direction: column;
-    align-items: center;
-
+.UserTableStatusContainer {
+  display: flex;
+  width: 100%;
+  padding: 3rem 0;
+  flex-direction: column;
+  align-items: center;
 }
-.UserTableStatusWrappper{
-    display: flex;
-    min-width:fit-content;
-    flex-direction: column;
-    align-items: center;
-    
 
+.UserTableStatusWrappper {
+  display: flex;
+  min-width: fit-content;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media (max-width: 800px) {
+  .sidebarWrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    background-color: #fff;
+    z-index: 1000;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+  }
+
+  .sidebarWrapper.open {
+    transform: translateX(0);
+  }
+}
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 999;
+}
+
+.sidebarToggle {
+    position: fixed;
+    top: 126px;
+    left: 15px;
+    z-index: 1100;
+    color: black;
+    background: #ffffff;
+    border: none;
+    border-radius: 8px;
+    padding: 2px 12px;
+
+    font-size: 20px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+
+  @media (min-width: 800px) {
+    display: none;
+  }
 }
