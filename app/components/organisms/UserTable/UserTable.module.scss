@@ -1,0 +1,49 @@
+.status {
+  padding: 0px 15px;
+  border-radius: 50px;
+  font-size: 12px;
+  font-weight: 500;
+  display: inline-block;
+  text-transform: capitalize;
+}
+
+.active {
+  background: #39cd632f;
+  color: #39cd62;
+}
+
+.inactive {
+  background: #545f7d4e;
+  color: #545f7d;
+}
+
+.pending {
+  background: #e9b3001a;
+  color: #e9b200;
+}
+
+.blacklisted {
+  background: #e4033b28;
+  color: #e4033b;
+}
+
+.actions {
+  cursor: pointer;
+  color: #9aa4bf;
+  font-size: 18px;
+}
+
+.userTableContainer {
+  width: 1280px;
+  height: auto;
+  background-color: #ffffff;
+}
+
+.userTableWrapper {
+  padding: 10px;
+  background-color: #ffffff;
+  width: fit-content;
+  height: auto;
+  border-radius: 6px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
