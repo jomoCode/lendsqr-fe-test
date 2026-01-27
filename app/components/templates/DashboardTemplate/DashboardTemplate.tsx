@@ -1,29 +1,32 @@
 "use client";
 
-import { useState } from "react";
-import { Header } from "../../organisms/Header/Header";
-import { SideBar } from "../../organisms/SideBar/SideBar";
-import { StatusCard } from "../../organisms/StatusCard/StatusCard";
-import { statusCards } from "../../organisms/StatusCard/statusCard.data";
-import { UserTable } from "../../organisms/UserTable/UserTable";
+import { Dispatch, ReactNode, SetStateAction } from "react";
 import styles from "./DashboardTemplate.module.scss";
 
-const DashboardTemplate = () => {
-  const [sidebarOpen, setSidebarOpen] = useState(false);
+type DashboardTemplateProps = {
+  header: ReactNode;
+  menuButton: ReactNode;
+  sidebar: ReactNode;
+  statusCards: ReactNode;
+  userTable: ReactNode;
+  sidebarOpen: boolean;
+  setSidebarOpen: Dispatch<SetStateAction<boolean>>;
+};
 
+const DashboardTemplate = ({
+  header,
+  menuButton,
+  sidebar,
+  statusCards,
+  userTable,
+  sidebarOpen,
+  setSidebarOpen,
+}: DashboardTemplateProps) => {
   return (
     <div className={styles.container}>
-      <Header />
+      {header}
 
-      {!sidebarOpen && (
-        <button
-          className={styles.sidebarToggle}
-          onClick={() => setSidebarOpen(true)}
-          aria-label="Open sidebar"
-        >
-          ...
-        </button>
-      )}
+      {!sidebarOpen && menuButton}
 
       <div className={styles.dashboardContent}>
         {/* Sidebar */}
@@ -32,7 +35,7 @@ const DashboardTemplate = () => {
             sidebarOpen ? styles.open : ""
           }`}
         >
-          <SideBar />
+          {sidebar}
         </div>
 
         {/* Overlay */}
@@ -46,21 +49,9 @@ const DashboardTemplate = () => {
         {/* Main content */}
         <div className={styles.UserTableStatusContainer}>
           <div className={styles.UserTableStatusWrappper}>
-            <div className={styles.dashboardStatusCard}>
-              {statusCards.map(({ color, icon, mainText, title }) => (
-                <StatusCard
-                  key={title}
-                  iconColor={color}
-                  icon={icon}
-                  mainText={mainText}
-                  title={title}
-                />
-              ))}
-            </div>
+            <div className={styles.dashboardStatusCard}>{statusCards}</div>
 
-            <div className={styles.tableWrapper}>
-              <UserTable />
-            </div>
+            <div className={styles.tableWrapper}>{userTable}</div>
           </div>
         </div>
       </div>
