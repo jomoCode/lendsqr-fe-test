@@ -12,5 +12,13 @@ export const setCookie = (name: string, value: string, days = 7) => {
     throw new Error("Days must be a positive number");
   }
 
+  // ---- create cookie ----
+  const expires = new Date();
+  expires.setTime(expires.getTime() + days * 24 * 60 * 60 * 1000);
 
+  const cookieCreated = `${name}=${value};expires=${expires.toUTCString()};path=/;SameSite=Lax`;
+
+  document.cookie = cookieCreated;
+
+  return cookieCreated;
 };

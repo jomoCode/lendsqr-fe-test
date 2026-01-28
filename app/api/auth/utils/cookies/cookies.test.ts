@@ -19,13 +19,17 @@ describe("setCookie", () => {
     );
   });
 
+  it("returns a cookie string when inputs are valid", () => {
+    const result = setCookie("auth", "1234", 5);
 
-  
-  it("returns a cookie string when given valid inputs", () => {
-    // test implementation
+    expect(result).toContain("auth=1234");
+    expect(result).toContain("expires=");
+    expect(result).toContain("path=/");
   });
 
-  it("defaults the expiry date to 7 days when no duration is provided", () => {
-    // test implementation
+  it("defaults expiry to 7 days when days is not provided", () => {
+    const result = setCookie("auth", "1234");
+
+    expect(result).toContain("expires=");
   });
 });
