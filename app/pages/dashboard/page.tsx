@@ -1,13 +1,13 @@
 "use client";
 import { useState } from "react";
 import styles from "./page.module.scss";
-import { DashboardTemplate } from "../components/templates/DashboardTemplate/DashboardTemplate";
-import { Header } from "../components/organisms/Header/Header";
-import { MenuButton } from "../components/atoms/MenuButton/MenuButton";
-import { SideBar } from "../components/organisms/SideBar/SideBar";
-import { statusCards } from "../components/organisms/StatusCard/statusCard.data";
-import { StatusCard } from "../components/organisms/StatusCard/StatusCard";
-import { UserTable } from "../components/organisms/UserTable/UserTable";
+import { DashboardTemplate } from "../../components/templates/DashboardTemplate/DashboardTemplate";
+import { Header } from "../../components/organisms/Header/Header";
+import { MenuButton } from "../../components/atoms/MenuButton/MenuButton";
+import { SideBar } from "../../components/organisms/SideBar/SideBar";
+import { statusCards } from "../../components/organisms/StatusCard/statusCard.data";
+import { StatusCard } from "../../components/organisms/StatusCard/StatusCard";
+import { UserTable } from "../../components/organisms/UserTable/UserTable";
 ;
 
 function Page() {
