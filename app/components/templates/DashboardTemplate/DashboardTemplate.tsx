@@ -9,8 +9,10 @@ type DashboardTemplateProps = {
   sidebar: ReactNode;
   statusCards: ReactNode;
   userTable: ReactNode;
+  empty: boolean;
   sidebarOpen: boolean;
   setSidebarOpen: Dispatch<SetStateAction<boolean>>;
+  emptyView: ReactNode;
 };
 
 const DashboardTemplate = ({
@@ -21,6 +23,8 @@ const DashboardTemplate = ({
   userTable,
   sidebarOpen,
   setSidebarOpen,
+  empty,
+  emptyView,
 }: DashboardTemplateProps) => {
   return (
     <div className={styles.container}>
@@ -47,13 +51,17 @@ const DashboardTemplate = ({
         )}
 
         {/* Main content */}
-        <div className={styles.UserTableStatusContainer}>
-          <div className={styles.UserTableStatusWrappper}>
-            <div className={styles.dashboardStatusCard}>{statusCards}</div>
+        {!empty ? (
+          <section className={styles.userTableStatusEmpty}>{emptyView}</section>
+        ) : (
+          <div className={styles.UserTableStatusContainer}>
+            <div className={styles.UserTableStatusWrappper}>
+              <div className={styles.dashboardStatusCard}>{statusCards}</div>
 
-            <div className={styles.tableWrapper}>{userTable}</div>
+              <div className={styles.tableWrapper}>{userTable}</div>
+            </div>
           </div>
-        </div>
+        )}
       </div>
     </div>
   );
