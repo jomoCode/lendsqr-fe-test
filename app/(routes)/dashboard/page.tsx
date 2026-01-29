@@ -8,18 +8,33 @@ import { SideBar } from "../../components/organisms/SideBar/SideBar";
 import { statusCards } from "../../components/organisms/StatusCard/statusCard.data";
 import { StatusCard } from "../../components/organisms/StatusCard/StatusCard";
 import { UserTable } from "../../components/organisms/UserTable/UserTable";
-import { columnDefs, rowData } from "@/app/components/organisms/UserTable/userTable.data";
-;
-
+import {
+  columnDefs,
+} from "@/app/components/organisms/UserTable/userTable.data";
+import { useClient } from "@/app/lib/hooks/useClients";
+import { Loading } from "@/app/components/organisms/Loading/Loading";
+import { EmptyState } from "@/app/components/organisms/Empty/Empty";
 function Page() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  const { data: clientData, isLoading } = useClient();
+  
 
- 
-  return (
+
+
+  
+  return isLoading ? (
+    <Loading text="fetching client data..." />
+  ) :  (
     <div className={styles.container}>
       <DashboardTemplate
         header={<Header />}
-        menuButton={<MenuButton setSidebarOpen={()=> {setSidebarOpen(true)}}/>}
+        menuButton={
+          <MenuButton
+            setSidebarOpen={() => {
+              setSidebarOpen(true);
+            }}
+          />
+        }
         setSidebarOpen={setSidebarOpen}
         sidebar={<SideBar />}
         sidebarOpen={sidebarOpen}
@@ -32,10 +47,12 @@ function Page() {
             title={title}
           />
         ))}
-        userTable={<UserTable columnDefs={columnDefs} rowData={rowData} />}
+        userTable={<UserTable columnDefs={columnDefs} rowData={clientData} />}
+        empty={!!clientData}
+        emptyView={<EmptyState/>}
       />
     </div>
-  );
+    )
 }
 
 export default Page;
