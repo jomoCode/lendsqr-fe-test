@@ -12,12 +12,12 @@ type ProtectedLayoutProps = {
 
 export const ProtectedLayout = ({ children }: ProtectedLayoutProps) => {
   const router = useRouter();
-  const { data: user, isLoading } = useUser();
+  const { isLoading } = useUser();
   const token = getCookie("auth_token");
 
   useEffect(() => {
     if (!token) {
-      router.push("/login"); 
+      router.push("/login");
     }
   }, [token, router]);
 
