@@ -6,6 +6,7 @@ import { SearchBar } from "../../molecules/SearchBar/SearchBar";
 import { FiBell } from "react-icons/fi";
 import { MdArrowDropDown } from "react-icons/md";
 import { useEffect, useRef, useState } from "react";
+import { signOut } from "@/app/api/auth/auth-api";
 
 const Header = ({ profileName }: { profileName: string }) => {
   const [open, setOpen] = useState(false);
@@ -79,7 +80,7 @@ const Header = ({ profileName }: { profileName: string }) => {
             <div className={styles.dropdownMenu}>
               <Link href="/dashboard/user">Profile</Link>
               <Link href="/dashboard">Settings</Link>
-              <button className={styles.logout}>Logout</button>
+              <button className={styles.logout} onClick={signOut}>Logout</button>
             </div>
           )}
         </div>
