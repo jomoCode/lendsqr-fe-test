@@ -52,7 +52,7 @@ const Header = ({ profileName }: { profileName: string }) => {
           Docs
         </Link>
         <FiBell size={24} fill={"#ffffff"} />
-        <Link href={"/dashboard/user"}>
+        <Link href={"/dashboard"}>
           <div className={styles.profileImageWrapper}>
             <Image
               src="/assets/images/profile.png"
