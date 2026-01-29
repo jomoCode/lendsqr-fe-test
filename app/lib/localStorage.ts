@@ -1,5 +1,5 @@
 export type StoredUser = {
-  fullName: string;
+  fullname: string;
   email: string;
   tier: number;
   balance: number;
