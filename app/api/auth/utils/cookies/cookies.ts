@@ -23,16 +23,23 @@ export const setCookie = (name: string, value: string, days = 7) => {
   return cookieCreated;
 };
 
-
-
 export const getCookie = (name: string): string | null => {
+  // validate cookie name
+  if (typeof name !== "string" || name.trim() === "") {
+    throw new Error("Invalid input: cookie name must be a non-empty string.");
+  }
 
-// validate cookie name
+  // retrieve cookies
+  const nameEQ = name + "=";
+  const cookieValuePairs = document.cookie.split(";");
+  // query cookies against name
+  for (const cookieValuePair of cookieValuePairs) {
+    const cleanCookieValuePair = cookieValuePair.trim();
 
-// retrieve cookies 
-
-// query cookies against name
-
-return null
-
+    
+    if (cleanCookieValuePair.indexOf(nameEQ) === 0) {
+      return cleanCookieValuePair.substring(nameEQ.length);
+    }
+  }
+  return null;
 };

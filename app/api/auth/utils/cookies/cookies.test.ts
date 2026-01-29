@@ -37,7 +37,7 @@ describe("setCookie", () => {
 describe("getCookie", () => {
   it("should throw an error if given an invalid input", () => {
     expect(() => getCookie(null as unknown as string)).toThrow();
-    expect(() => getCookie(123 as unknown as string)).toThrow();
+    expect(() => getCookie("   ")).toThrow();
   });
 
   it("should return null if no cookie is found", () => {
