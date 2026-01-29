@@ -80,7 +80,7 @@ const Header = ({ profileName }: { profileName: string }) => {
 
           {open && (
             <div className={styles.dropdownMenu}>
-              <Link href="/dashboard/user">Profile</Link>
+              <Link href="/dashboard">Profile</Link>
               <Link href="/dashboard">Settings</Link>
               <button className={styles.logout} onClick={()=>{
                 signOut();
