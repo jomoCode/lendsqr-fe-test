@@ -1,5 +1,3 @@
-"use client";
-
 import { Dispatch, ReactNode, SetStateAction } from "react";
 import styles from "./DashboardTemplate.module.scss";
 
