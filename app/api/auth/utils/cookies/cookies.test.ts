@@ -1,4 +1,4 @@
-import { setCookie } from "./cookies";
+import { getCookie, setCookie } from "./cookies";
 
 describe("setCookie", () => {
   it("throws an error when the cookie name is invalid", () => {
@@ -31,5 +31,27 @@ describe("setCookie", () => {
     const result = setCookie("auth", "1234");
 
     expect(result).toContain("expires=");
+  });
+});
+
+describe("getCookie", () => {
+  it("should throw an error if given an invalid input", () => {
+    expect(() => getCookie(null as unknown as string)).toThrow();
+    expect(() => getCookie(123 as unknown as string)).toThrow();
+  });
+
+  it("should return null if no cookie is found", () => {
+    const result = getCookie("nonExistent");
+    expect(result).toBeNull();
+  });
+
+  it("should return the correct value if the cookie exists", () => {
+    document.cookie = "session_id=12345";
+
+    const result = getCookie("session_id");
+
+    expect(result).toBe("12345");
+
+    document.cookie = "session_id=; Max-Age=0";
   });
 });

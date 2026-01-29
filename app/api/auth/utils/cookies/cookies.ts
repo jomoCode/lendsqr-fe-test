@@ -22,3 +22,17 @@ export const setCookie = (name: string, value: string, days = 7) => {
 
   return cookieCreated;
 };
+
+
+
+export const getCookie = (name: string): string | null => {
+
+// validate cookie name
+
+// retrieve cookies 
+
+// query cookies against name
+
+return null
+
+};
