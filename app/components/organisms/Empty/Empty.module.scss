@@ -1,0 +1,37 @@
+.emptyState {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  min-height: 60vh;
+  width: 100%;
+  background-color: #f9fafc;
+  color: #213f7d;
+  font-family: "Inter", sans-serif;
+  text-align: center;
+  gap: 1.5rem;
+}
+
+.logo {
+  opacity: 0.6;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  h2 {
+    font-size: 1.25rem; // 20px
+    font-weight: 600;
+    margin: 0;
+  }
+
+  p {
+    font-size: 0.95rem;
+    opacity: 0.7;
+    margin: 0;
+    max-width: 320px;
+  }
+}
