@@ -24,22 +24,25 @@ export const setCookie = (name: string, value: string, days = 7) => {
 };
 
 export const getCookie = (name: string): string | null => {
-  // validate cookie name
   if (typeof name !== "string" || name.trim() === "") {
     throw new Error("Invalid input: cookie name must be a non-empty string.");
   }
 
-  // retrieve cookies
   const nameEQ = name + "=";
   const cookieValuePairs = document.cookie.split(";");
-  // query cookies against name
   for (const cookieValuePair of cookieValuePairs) {
     const cleanCookieValuePair = cookieValuePair.trim();
 
-    
     if (cleanCookieValuePair.indexOf(nameEQ) === 0) {
       return cleanCookieValuePair.substring(nameEQ.length);
     }
   }
   return null;
+};
+
+export const deleteCookie = (name: string) => {
+  if (typeof name !== "string" || name.trim() === "") {
+    throw new Error("Invalid input: cookie name must be a non-empty string.");
+  }
+  document.cookie = `${name}=; Max-Age=0; path=/; SameSite=Lax`;
 };

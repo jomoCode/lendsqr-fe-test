@@ -1,4 +1,4 @@
-import { getCookie, setCookie } from "./cookies";
+import { deleteCookie, getCookie, setCookie } from "./cookies";
 
 describe("setCookie", () => {
   it("throws an error when the cookie name is invalid", () => {
@@ -53,5 +53,26 @@ describe("getCookie", () => {
     expect(result).toBe("12345");
 
     document.cookie = "session_id=; Max-Age=0";
+  });
+});
+
+
+describe("deleteCookie", () => {
+  beforeEach(() => {
+    document.cookie = "";
+  });
+
+  it("removes the specified cookie", () => {
+    // arrange - set a cookie manually
+    document.cookie = "auth_token=test123; path=/";
+
+    // assert - cookie exists
+    expect(document.cookie).toContain("auth_token=test123");
+
+    // ac- delete the cookie
+    deleteCookie("auth_token");
+
+    // assert cookie is gone
+    expect(document.cookie).not.toContain("auth_token");
   });
 });
