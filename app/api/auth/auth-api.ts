@@ -1,9 +1,11 @@
 import {
+  deleteProfileDetailsFromStorage,
+  deleteUserFromStorage,
   saveProfileDetailsToStorage,
   saveUserToStorage,
   StoredUser,
 } from "@/app/lib/localStorage";
-import { setCookie } from "../utils/cookies/cookies";
+import { deleteCookie, setCookie } from "../utils/cookies/cookies";
 import { apiAsync } from "./api";
 import { profileSections } from "@/app/components/organisms/UserProfileDetails/userProfileDetails.data";
 
@@ -43,4 +45,12 @@ export const loginAsync = async (email: string, password: string) => {
   } catch (error) {
     throw new Error("Error signingin user");
   }
+};
+
+
+
+export const signOut = () => {
+  deleteCookie("auth_token");
+  deleteUserFromStorage();
+  deleteProfileDetailsFromStorage();
 };
