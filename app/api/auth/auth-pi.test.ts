@@ -9,6 +9,11 @@ const mockedUsers = [{ email: "email@EmailInput.com", password: "passw0TRd" }];
 
 describe('loginAsync', () => {
 
+    beforeEach(() => {
+    process.env.NEXT_PUBLIC_API_BASE_URL =
+      "https://xxxx.mockapi.io/api/v1";
+  });
+
   it('calls apiAsync with the correct endpoint', async () => {
     const endpoint = "https://xxxx.mockapi.io/api/v1/users";
 
