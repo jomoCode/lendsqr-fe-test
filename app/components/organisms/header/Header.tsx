@@ -7,10 +7,12 @@ import { FiBell } from "react-icons/fi";
 import { MdArrowDropDown } from "react-icons/md";
 import { useEffect, useRef, useState } from "react";
 import { signOut } from "@/app/api/auth/auth-api";
+import { useRouter } from "next/navigation";
 
 const Header = ({ profileName }: { profileName: string }) => {
   const [open, setOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
+  const router =  useRouter()
 
   useEffect(() => {
     const handler = (e: MouseEvent) => {
@@ -80,7 +82,10 @@ const Header = ({ profileName }: { profileName: string }) => {
             <div className={styles.dropdownMenu}>
               <Link href="/dashboard/user">Profile</Link>
               <Link href="/dashboard">Settings</Link>
-              <button className={styles.logout} onClick={signOut}>Logout</button>
+              <button className={styles.logout} onClick={()=>{
+                signOut();
+                router.push("/")
+                }}>Logout</button>
             </div>
           )}
         </div>
