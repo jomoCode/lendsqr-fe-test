@@ -1,4 +1,4 @@
-import { saveUserToStorage } from "@/app/lib/localStorage";
+import { saveUserToStorage, StoredUser } from "@/app/lib/localStorage";
 import { setCookie } from "../utils/cookies/cookies";
 import { apiAsync } from "./api";
 
@@ -13,7 +13,8 @@ export const loginAsync = async (email: string, password: string) => {
     throw Error("Request must contain username and password");
 
   try {
-    const users: { email: string; password: string }[] = await apiAsync(
+    type User = Omit<StoredUser, "avatarUrl"> & {password: string; avater:string};
+    const users: User[] = await apiAsync(
       `${baseUrl}/users`,
     );
 
@@ -24,10 +25,14 @@ export const loginAsync = async (email: string, password: string) => {
       (u) => u.email === email && u.password === password,
     );
 
+    if (!user) {
+      throw new Error("Invalid credentials");
+    }
+
     setCookie("auth_token", "mock-auth-token", 30);
-    saveUserToStorage(user);  
-    return user;
-  
+    const userNormalized = {...user, avatarUrl:user.avater}
+    saveUserToStorage(userNormalized);
+    return userNormalized;
   } catch (error) {
     throw new Error("Error signingin user");
   }
