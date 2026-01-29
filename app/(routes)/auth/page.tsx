@@ -2,7 +2,7 @@
 import { LoginLeft } from "../../components/organisms/LoginLeft/LoginLeft";
 import { LoginRight } from "../../components/organisms/LoginRight/LoginRight";
 import { LoginTemplate } from "../../components/templates/LoginTemplate/LoginTemplate";
-import styles from "./components/templates/page.module.scss";
+import styles from "./page.module.scss";
 
 function Page() {
   return (
