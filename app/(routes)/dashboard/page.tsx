@@ -8,6 +8,7 @@ import { SideBar } from "../../components/organisms/SideBar/SideBar";
 import { statusCards } from "../../components/organisms/StatusCard/statusCard.data";
 import { StatusCard } from "../../components/organisms/StatusCard/StatusCard";
 import { UserTable } from "../../components/organisms/UserTable/UserTable";
+import { columnDefs, rowData } from "@/app/components/organisms/UserTable/userTable.data";
 ;
 
 function Page() {
@@ -31,7 +32,7 @@ function Page() {
             title={title}
           />
         ))}
-        userTable={<UserTable />}
+        userTable={<UserTable columnDefs={columnDefs} rowData={rowData} />}
       />
     </div>
   );

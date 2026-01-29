@@ -1,9 +1,10 @@
 "use client";
 
-import { Table } from "../../molecules/Table/Table";
-import { columnDefs, rowData } from "./userTable.data";
+import { Table, UsersTableType } from "../../molecules/Table/Table";
 import styles from './UserTable.module.scss'
-const UserTable = () => {
+
+
+const UserTable = ({columnDefs,rowData}:UsersTableType) => {
   return (
     <div className={styles.userTableWrapper}>
     <div className={styles.userTableContainer}>
