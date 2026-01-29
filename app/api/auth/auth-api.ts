@@ -1,6 +1,11 @@
-import { saveUserToStorage, StoredUser } from "@/app/lib/localStorage";
+import {
+  saveProfileDetailsToStorage,
+  saveUserToStorage,
+  StoredUser,
+} from "@/app/lib/localStorage";
 import { setCookie } from "../utils/cookies/cookies";
 import { apiAsync } from "./api";
+import { profileSections } from "@/app/components/organisms/UserProfileDetails/userProfileDetails.data";
 
 export const loginAsync = async (email: string, password: string) => {
   const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL;
@@ -13,10 +18,11 @@ export const loginAsync = async (email: string, password: string) => {
     throw Error("Request must contain username and password");
 
   try {
-    type User = Omit<StoredUser, "avatarUrl"> & {password: string; avater:string};
-    const users: User[] = await apiAsync(
-      `${baseUrl}/users`,
-    );
+    type User = Omit<StoredUser, "avatarUrl"> & {
+      password: string;
+      avater: string;
+    };
+    const users: User[] = await apiAsync(`${baseUrl}/users`);
 
     if (!users) {
       throw new Error("Invalid credentials");
@@ -30,8 +36,9 @@ export const loginAsync = async (email: string, password: string) => {
     }
 
     setCookie("auth_token", "mock-auth-token", 30);
-    const userNormalized = {...user, avatarUrl:user.avater}
+    const userNormalized = { ...user, avatarUrl: user.avater };
     saveUserToStorage(userNormalized);
+    saveProfileDetailsToStorage(profileSections);
     return userNormalized;
   } catch (error) {
     throw new Error("Error signingin user");

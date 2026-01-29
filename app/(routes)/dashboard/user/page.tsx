@@ -8,14 +8,15 @@ import { Header } from "@/app/components/organisms/Header/Header";
 import { SideBar } from "@/app/components/organisms/SideBar/SideBar";
 import { UserProfileHeading } from "@/app/components/organisms/UserProfileHeading/UserProfileHeading";
 import { UserProfileDetails } from "@/app/components/organisms/UserProfileDetails/UserProfileDetails";
-import { profileSections } from "@/app/components/organisms/UserProfileDetails/userProfileDetails.data";
 import { EmptyState } from "@/app/components/organisms/Empty/Empty";
 import { useUser } from "@/app/lib/hooks/useUser";
+import { getProfileDetailsFromStorage } from "@/app/lib/localStorage";
 
 function Page() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const { data } = useUser();
   const userName = data ? data.fullname.split(" ")[0] : "...";
+  const profileSections = getProfileDetailsFromStorage();
 
   return (
     <div className={styles.container}>
@@ -33,7 +34,7 @@ function Page() {
             description="Profile will appear here once available"
           />
         }
-        empty={false}
+        empty={!!profileSections}
       />
     </div>
   );
