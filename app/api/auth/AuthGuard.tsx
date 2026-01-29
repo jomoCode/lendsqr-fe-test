@@ -17,7 +17,7 @@ export const ProtectedLayout = ({ children }: ProtectedLayoutProps) => {
 
   useEffect(() => {
     if (!token) {
-      router.push("/login");
+      router.push("/");
     }
   }, [token, router]);
 
