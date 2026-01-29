@@ -1,3 +1,5 @@
+'use client'
+
 import { ProtectedLayout } from "@/app/api/auth/AuthGuard";
 import { ReactNode } from "react";
 
