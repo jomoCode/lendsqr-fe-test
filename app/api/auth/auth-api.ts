@@ -1,3 +1,4 @@
+import { saveUserToStorage } from "@/app/lib/localStorage";
 import { setCookie } from "../utils/cookies/cookies";
 import { apiAsync } from "./api";
 
@@ -24,7 +25,7 @@ export const loginAsync = async (email: string, password: string) => {
     );
 
     setCookie("auth_token", "mock-auth-token", 30);
-    
+    saveUserToStorage(user);  
     return user;
   
   } catch (error) {
