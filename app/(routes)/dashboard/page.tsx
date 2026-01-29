@@ -1,4 +1,5 @@
 "use client";
+
 import { useState } from "react";
 import styles from "./page.module.scss";
 import { DashboardTemplate } from "../../components/templates/DashboardTemplate/DashboardTemplate";
@@ -14,9 +15,12 @@ import {
 import { useClient } from "@/app/lib/hooks/useClients";
 import { Loading } from "@/app/components/organisms/Loading/Loading";
 import { EmptyState } from "@/app/components/organisms/Empty/Empty";
+import { useUser } from "@/app/lib/hooks/useUser";
 function Page() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  const { data } = useUser();
   const { data: clientData, isLoading } = useClient();
+  const userName = data && data.fullname ? data.fullname.split(" ")[0] : "...";
   
 
 
@@ -27,7 +31,7 @@ function Page() {
   ) :  (
     <div className={styles.container}>
       <DashboardTemplate
-        header={<Header />}
+        header={<Header profileName={userName} />}
         menuButton={
           <MenuButton
             setSidebarOpen={() => {
