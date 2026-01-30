@@ -11,7 +11,7 @@ type DashboardTemplateProps = {
   sidebarOpen: boolean;
   setSidebarOpen: Dispatch<SetStateAction<boolean>>;
   emptyView: ReactNode;
-  userActions?:ReactNode
+  userActions?: ReactNode;
 };
 
 const DashboardTemplate = ({
@@ -24,7 +24,7 @@ const DashboardTemplate = ({
   setSidebarOpen,
   empty,
   emptyView,
-  userActions
+  userActions,
 }: DashboardTemplateProps) => {
   return (
     <div className={styles.container}>
@@ -50,15 +50,14 @@ const DashboardTemplate = ({
           />
         )}
 
-        {/* User detials */}
-        {userActions && userActions}
-
         {/* Main content */}
         {!empty ? (
           <section className={styles.userTableStatusEmpty}>{emptyView}</section>
         ) : (
           <div className={styles.UserTableStatusContainer}>
             <div className={styles.UserTableStatusWrappper}>
+              {/* User detials */}
+              {userActions && userActions}
               <div className={styles.dashboardStatusCard}>{statusCards}</div>
 
               <div className={styles.tableWrapper}>{userTable}</div>
