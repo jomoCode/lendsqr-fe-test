@@ -10,7 +10,7 @@ The focus is on **code structure, UI clarity, routing, data fetching, and correc
 
 ##  Live Demo
 
- https://`<candidate-name>`-lendsqr-fe-test.vercel.app
+https://lendsqr-fe-test-jomo.vercel.app/auth
 
 ##  Repository
 
@@ -105,6 +105,9 @@ npm install
 ```bash
 npm run dev
 ```
+### login: 
+email: email@gmail.com
+password:1234567890 
 
 Open: [http://localhost:3000](http://localhost:3000)
 
