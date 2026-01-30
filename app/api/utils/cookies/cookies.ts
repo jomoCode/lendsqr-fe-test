@@ -13,6 +13,11 @@ export const setCookie = (name: string, value: string, days = 7) => {
   }
 
   // ---- create cookie ----
+  if (typeof document === "undefined") {
+    // running on server — no-op
+    return "";
+  }
+
   const expires = new Date();
   expires.setTime(expires.getTime() + days * 24 * 60 * 60 * 1000);
 
@@ -27,6 +32,7 @@ export const getCookie = (name: string): string | null => {
   if (typeof name !== "string" || name.trim() === "") {
     throw new Error("Invalid input: cookie name must be a non-empty string.");
   }
+  if (typeof document === "undefined") return null;
 
   const nameEQ = name + "=";
   const cookieValuePairs = document.cookie.split(";");
@@ -44,5 +50,6 @@ export const deleteCookie = (name: string) => {
   if (typeof name !== "string" || name.trim() === "") {
     throw new Error("Invalid input: cookie name must be a non-empty string.");
   }
+  if (typeof document === "undefined") return;
   document.cookie = `${name}=; Max-Age=0; path=/; SameSite=Lax`;
 };

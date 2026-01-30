@@ -8,9 +8,20 @@ import { CellClickedEvent, ColDef } from "ag-grid-community";
 import { ModuleRegistry, AllCommunityModule } from "ag-grid-community";
 ModuleRegistry.registerModules([AllCommunityModule]);
 
-type TableProps = { rowData?: object[]; columnDefs: ColDef[];   onCellClick?: (row: T) => void; };
+type TableProps<T = object> = {
+  rowData?: T[];
+  columnDefs: ColDef[];
+  onCellClick?: (row: T) => void;
+};
 export type UsersTableType = TableProps;
-const Table = ({ rowData, columnDefs, onCellClick }: TableProps) => {
+
+
+
+const Table = <T extends object = object>({
+  rowData,
+  columnDefs,
+  onCellClick,
+}: TableProps<T>) => {
   const containerStyle: CSSProperties = {
     width: "100%",
     height: "100%",
