@@ -38,6 +38,7 @@ const LoginForm = ({ handleLogin, loading }: LoginFormProps) => {
             message: "Enter a valid email address",
           },
         })}
+        defaultValue={'email@gmail.com'}
         placeholder="Email"
         className={styles.loginInputs}
       />
@@ -53,6 +54,7 @@ const LoginForm = ({ handleLogin, loading }: LoginFormProps) => {
               message: "Password must be at least 6 characters",
             },
           })}
+          defaultValue={1234567890}
           type={showPassword ? "text" : "password"}
           placeholder="Password"
           className={styles.loginInputs}
