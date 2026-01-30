@@ -3,14 +3,14 @@
 import { CSSProperties } from "react";
 import { AgGridReact } from "ag-grid-react";
 import "ag-grid-community/styles/ag-theme-quartz.css";
-import { ColDef } from "ag-grid-community";
+import { CellClickedEvent, ColDef } from "ag-grid-community";
 
 import { ModuleRegistry, AllCommunityModule } from "ag-grid-community";
 ModuleRegistry.registerModules([AllCommunityModule]);
 
-type TableProps = { rowData?: object[]; columnDefs: ColDef[] };
+type TableProps = { rowData?: object[]; columnDefs: ColDef[];   onCellClick?: (row: T) => void; };
 export type UsersTableType = TableProps;
-const Table = ({ rowData, columnDefs }: TableProps) => {
+const Table = ({ rowData, columnDefs, onCellClick }: TableProps) => {
   const containerStyle: CSSProperties = {
     width: "100%",
     height: "100%",
@@ -34,6 +34,10 @@ const Table = ({ rowData, columnDefs }: TableProps) => {
         pagination={true}
         paginationPageSize={10}
         suppressHorizontalScroll={false}
+        onCellClicked={(event: CellClickedEvent<T>) => {
+          if (!event.data) return;
+          onCellClick?.(event.data);
+        }}
       />
       <style jsx global>{`
         /* ===== HEADER CELL LAYOUT ===== */

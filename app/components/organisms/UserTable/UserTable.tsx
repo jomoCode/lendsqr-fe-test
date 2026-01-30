@@ -4,11 +4,11 @@ import { Table, UsersTableType } from "../../molecules/Table/Table";
 import styles from './UserTable.module.scss'
 
 
-const UserTable = ({columnDefs,rowData}:UsersTableType) => {
+const UserTable = ({columnDefs,rowData, onCellClick}:UsersTableType) => {
   return (
     <div className={styles.userTableWrapper}>
     <div className={styles.userTableContainer}>
-      <Table columnDefs={columnDefs} rowData={rowData} />
+      <Table columnDefs={columnDefs} rowData={rowData} onCellClick={onCellClick} />
     </div> </div>
   );
 };

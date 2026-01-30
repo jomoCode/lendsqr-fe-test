@@ -10,13 +10,39 @@ import { UserProfileHeading } from "@/app/components/organisms/UserProfileHeadin
 import { UserProfileDetails } from "@/app/components/organisms/UserProfileDetails/UserProfileDetails";
 import { EmptyState } from "@/app/components/organisms/Empty/Empty";
 import { useUser } from "@/app/lib/hooks/useUser";
-import { getProfileDetailsFromStorage } from "@/app/lib/localStorage";
+import {
+  getProfileDetailsFromStorage,
+  StoredUser,
+} from "@/app/lib/localStorage";
+import { UserDetailActions } from "@/app/components/organisms/UserDetailActions/UserDetailActions";
+import { InfoSection } from "@/app/components/molecules/InfoSection/InfoSection";
 
 function Page() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const { data } = useUser();
   const userName = data ? data.fullname.split(" ")[0] : "...";
   const profileSections = getProfileDetailsFromStorage();
+  const user: StoredUser = JSON.parse(
+    sessionStorage.getItem("selectedUser") ?? "null",
+  );
+  const mutateProfileSection = (profileSections: InfoSection[] | undefined) => {
+    if (profileSections) {
+      const personalInformation = profileSections[0].items.map((item, index) =>
+        index === 0
+          ? { ...item, label: "Full Name", value: user.username }
+          : item,
+      );
+
+      const modifiedSection = [
+        { ...profileSections[0], items: personalInformation },
+        profileSections[1],
+        profileSections[2],
+        profileSections[3],
+      ];
+
+      return modifiedSection;
+    }
+  };
 
   return (
     <div className={styles.container}>
@@ -26,8 +52,17 @@ function Page() {
         setSidebarOpen={setSidebarOpen}
         sidebar={<SideBar />}
         sidebarOpen={sidebarOpen}
-        statusCards={<UserProfileHeading />}
-        userTable={<UserProfileDetails sections={profileSections} />}
+        userActions={<UserDetailActions />}
+        statusCards={<UserProfileHeading data={user} />}
+        userTable={
+          <UserProfileDetails
+            sections={
+              profileSections
+                ? mutateProfileSection(profileSections)
+                : profileSections
+            }
+          />
+        }
         emptyView={
           <EmptyState
             title="Profile is empty"

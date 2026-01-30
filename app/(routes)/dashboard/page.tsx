@@ -9,26 +9,29 @@ import { SideBar } from "../../components/organisms/SideBar/SideBar";
 import { statusCards } from "../../components/organisms/StatusCard/statusCard.data";
 import { StatusCard } from "../../components/organisms/StatusCard/StatusCard";
 import { UserTable } from "../../components/organisms/UserTable/UserTable";
-import {
-  columnDefs,
-} from "@/app/components/organisms/UserTable/userTable.data";
+import { columnDefs } from "@/app/components/organisms/UserTable/userTable.data";
 import { useClient } from "@/app/lib/hooks/useClients";
 import { Loading } from "@/app/components/organisms/Loading/Loading";
 import { EmptyState } from "@/app/components/organisms/Empty/Empty";
 import { useUser } from "@/app/lib/hooks/useUser";
+import { useRouter } from "next/navigation";
+import {
+  saveProfileDetailsToStorage,
+} from "@/app/lib/localStorage";
+import { profileSections } from "@/app/components/organisms/UserProfileDetails/userProfileDetails.data";
+
+
+
 function Page() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const { data } = useUser();
   const { data: clientData, isLoading } = useClient();
   const userName = data && data.fullname ? data.fullname.split(" ")[0] : "...";
-  
+  const router = useRouter();
 
-
-
-  
   return isLoading ? (
     <Loading text="fetching client data..." />
-  ) :  (
+  ) : (
     <div className={styles.container}>
       <DashboardTemplate
         header={<Header profileName={userName} />}
@@ -51,12 +54,23 @@ function Page() {
             title={title}
           />
         ))}
-        userTable={<UserTable columnDefs={columnDefs} rowData={clientData} />}
+        userTable={
+          <UserTable
+            columnDefs={columnDefs}
+            rowData={clientData}
+            onCellClick={(user) => {
+              console.log("Clicked row:", user);
+              sessionStorage.setItem("selectedUser", JSON.stringify(user));
+              saveProfileDetailsToStorage(profileSections);
+              router.push(`/dashboard/user`);
+            }}
+          />
+        }
         empty={!!clientData}
-        emptyView={<EmptyState/>}
+        emptyView={<EmptyState />}
       />
     </div>
-    )
+  );
 }
 
 export default Page;

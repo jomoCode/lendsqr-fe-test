@@ -11,6 +11,7 @@ type DashboardTemplateProps = {
   sidebarOpen: boolean;
   setSidebarOpen: Dispatch<SetStateAction<boolean>>;
   emptyView: ReactNode;
+  userActions?:ReactNode
 };
 
 const DashboardTemplate = ({
@@ -23,6 +24,7 @@ const DashboardTemplate = ({
   setSidebarOpen,
   empty,
   emptyView,
+  userActions
 }: DashboardTemplateProps) => {
   return (
     <div className={styles.container}>
@@ -47,6 +49,9 @@ const DashboardTemplate = ({
             onClick={() => setSidebarOpen(false)}
           />
         )}
+
+        {/* User detials */}
+        {userActions && userActions}
 
         {/* Main content */}
         {!empty ? (

@@ -1,6 +1,7 @@
 import { InfoSection } from "../components/molecules/InfoSection/InfoSection";
 
 export type StoredUser = {
+  username?: any;
   fullname: string;
   email: string;
   tier: number;
@@ -8,6 +9,7 @@ export type StoredUser = {
   accountNumber: string;
   bankName: string;
   avatarUrl?: string;
+  id?:string;
 };
 
 
