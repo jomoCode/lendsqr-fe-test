@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import styles from "./Header.module.scss";
+import styles from "./MainHeader.module.scss";
 import { SearchBar } from "../../molecules/SearchBar/SearchBar";
 import { FiBell } from "react-icons/fi";
 import { MdArrowDropDown } from "react-icons/md";
