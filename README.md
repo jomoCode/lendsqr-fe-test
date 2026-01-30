@@ -1,36 +1,133 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Getting Started
+# Lendsqr Frontend
 
-First, run the development server:
+This project is a frontend implementation for the **Lendsqr Frontend Engineering Assessment**, built using **Next.js (App Router)**.
+
+The application displays a list of users and detailed user profiles based on data fetched from a mock API.
+The focus is on **code structure, UI clarity, routing, data fetching, and correctness**, rather than backend logic.
+
+---
+
+##  Live Demo
+
+ https://`<candidate-name>`-lendsqr-fe-test.vercel.app
+
+##  Repository
+
+https://github.com/jomoCode/lendsqr-fe-test
+
+---
+
+##  Tech Stack
+
+* **Next.js 13+ (App Router)**
+* **React**
+* **TypeScript**
+* **TanStack Query (React Query)** — data fetching & caching
+* **SCSS / CSS Modules**
+* **Mock API (mockapi.io)**
+* **Vercel** (Deployment)
+
+---
+
+##  Project Structure
+
+```
+app/
+├── auth/                     # Login page
+├───── page.tsx              # Login page
+
+├── dashboard/
+│   └── page.tsx              # Dashboard
+├──└── users/
+│         └── page.tsx        # Users list
+│   
+│       	               # User details
+├── components/               # Reusable UI components
+├── services/                 # API requests
+├── types/                    # TypeScript types/interfaces
+├── utils/                    # Helpers (cookies, formatting, etc.)
+└── styles/                   # Global and module styles
+```
+
+---
+
+##  Features Implemented
+
+* Login UI (mocked authentication)
+* Users list fetched from a mock API
+* User details page with dynamic routing
+* Server-safe handling of browser APIs
+* **Efficient client-side data fetching with TanStack Query**
+* Request caching and background refetching
+* Responsive dashboard layout
+* Clean, professional UI consistent with Lendsqr design expectations
+
+---
+
+##  Data Fetching Strategy
+
+* **TanStack Query** is used for:
+
+  * API state management
+  * Caching and request deduplication
+  * Loading and error state handling
+* Data is fetched from a **mock API**
+* No backend or persistent authentication
+
+---
+
+##  SSR Considerations
+
+* Browser-only APIs (e.g. `localStorage`) are accessed safely
+* Client components are explicitly marked using `"use client"`
+* Query logic runs only in client components where required
+
+---
+
+##  Getting Started
+
+### Clone the repository
+
+```bash
+git clone https://github.com/jomoCode/lendsqr-fe-test.git
+cd lendsqr-fe-test
+```
+
+### Install dependencies
+
+```bash
+npm install
+```
+
+### Run locally
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open: [http://localhost:3000](http://localhost:3000)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Deployment
 
-## Learn More
+The application is deployed on **Vercel** :
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Notes
 
-## Deploy on Vercel
+* Frontend-only application
+* API data is mocked and assumed stable
+* Emphasis on **readability, correctness, and maintainability**
+* TanStack Query chosen to model real-world data fetching patterns
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Author
+
+**Mogbolu john-johanan**
+Frontend Engineer
+
