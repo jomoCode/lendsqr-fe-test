@@ -24,6 +24,17 @@ const SideBar = () => {
    <BiChevronDown size={25}/>
       </div>
 
+
+  <div className={styles.dashboard}>
+        <Image
+          src="/assets/images/sidebar-icons/home.png"
+          alt="Switch Organization"
+          width={16}
+          height={16}
+        />
+        <span>Dashboard</span>
+      </div>
+
       {/* Scrollable content */}
       <div className={styles.scrollArea}>
         {sidebarSections.map((section) => (
