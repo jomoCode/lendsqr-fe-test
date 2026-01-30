@@ -8,7 +8,6 @@
 
   background-color: transparent;
 
-  .sideBarIcon,
   .sideBarText {
     color: #213f7d99;
   }
@@ -19,7 +18,6 @@
   border-left-width: 3px;
   border-left-color: #39cdcc;
 
-  .sideBarIcon,
   .sideBarText {
     color: #213f7d;
   }
@@ -27,4 +25,24 @@
 
 .sideBarText {
   font-size: 1.125rem;
+}
+
+.sideBarIcon {
+  opacity: 0.6;
+}
+
+.active {
+  .sideBarIcon {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .mainContianer {
+    width: 220px;
+  }
+
+  .sideBarText {
+    font-size: 1rem;
+  }
 }

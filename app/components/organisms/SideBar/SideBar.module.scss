@@ -1,25 +1,26 @@
 .mainContianer {
   background-color: #ffffff;
   width: 250px;
-  height: fit-content;
-  padding: 40px 0px;
-  gap: 10px;
-    box-shadow: 4px 0 8px -2px rgba(0, 0, 0, 0.2);
-}
-
-.organization {
-  color: #213f7d;
-  font-size: 1.125rem;
+  min-height: 100vh;
   display: flex;
-  flex-direction: row;
-  padding: 2px 5px 2px 20px;
-  gap: 10px;
-  margin-bottom: 30px;
+  flex-direction: column;
+  box-shadow: 4px 0 8px -2px rgba(0, 0, 0, 0.2);
 }
 
-.sectionHeaders {
-  color: #545f7d;
+.scrollArea {
+  flex: 1;
+  padding: 40px 0;
+  overflow-y: auto;
+}
+
+.footer {
+  padding: 20px 0;
+  border-top: 1px solid #e5e7eb;
+}
+
+.version {
+  display: block;
+  padding-left: 20px;
   font-size: 0.75rem;
-  padding: 2px 5px 2px 20px;
-  margin-top: 10;
+  color: #545f7d;
 }

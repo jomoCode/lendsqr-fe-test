@@ -1,40 +1,38 @@
-export type SidebarItem =
-  (typeof sidebarSections)[number]["items"][number];
-
 export const sidebarSections = [
   {
     title: "CUSTOMERS",
     items: [
-      { name: "Users", icon: "BsPeople" },
-      { name: "Guarantors", icon: "BsPeopleFill" },
-      { name: "Loans", icon: "BsCashStack" },
-      { name: "Decision Models", icon: "BsDiagram3" },
-      { name: "Savings", icon: "BsPiggyBank" },
-      { name: "Loan Requests", icon: "BsCashCoin" },
-      { name: "Whitelist", icon: "BsCheck2Square" },
-      { name: "Karma", icon: "BsShieldLock" },
+      { name: "Users", icon: "user-friends.png" },
+      { name: "Guarantors", icon: "users.png" },
+      { name: "Loans", icon: "sack.png" },
+      { name: "Decision Models", icon: "handshake.png" },
+      { name: "Savings", icon: "piggy-bank.png" },
+      { name: "Loan Requests", icon: "loan.png" },
+      { name: "Whitelist", icon: "user-check.png" },
+      { name: "Karma", icon: "user-times.png" },
     ],
   },
   {
     title: "BUSINESSES",
     items: [
-      { name: "Organization", icon: "BsBuilding" },
-      { name: "Loan Products", icon: "BsBank" },
-      { name: "Savings Products", icon: "BsPiggyBankFill" },
-      { name: "Fees and Charges", icon: "BsCreditCard" },
-      { name: "Transactions", icon: "BsArrowLeftRight" },
-      { name: "Services", icon: "BsTools" },
-      { name: "Service Account", icon: "BsPersonBadge" },
-      { name: "Settlements", icon: "BsClipboardCheck" },
-      { name: "Reports", icon: "BsBarChart" },
+      { name: "Organization", icon: "briefcase.png" },
+      { name: "Loan Products", icon: "loan.png" },
+      { name: "Savings Products", icon: "np_bank.png" },
+      { name: "Fees and Charges", icon: "coins-solid.png" },
+      { name: "Transactions", icon: "icon.png" },
+      { name: "Services", icon: "galaxy.png" },
+      { name: "Service Account", icon: "user-cog.png" },
+      { name: "Settlements", icon: "scroll.png" },
+      { name: "Reports", icon: "chart-bar.png" },
     ],
   },
   {
     title: "SETTINGS",
     items: [
-      { name: "Preferences", icon: "BsSliders" },
-      { name: "Fees and Pricing", icon: "BsTag" },
-      { name: "Audit Logs", icon: "BsClockHistory" },
+      { name: "Preferences", icon: "sliders.png" },
+      { name: "Fees and Pricing", icon: "badge-percent.png" },
+      { name: "Audit Logs", icon: "clipboard-list.png" },
+      { name: "System Messages", icon: "tire.png" },
     ],
   },
 ] as const;

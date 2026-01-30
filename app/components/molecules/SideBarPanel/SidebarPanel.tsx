@@ -1,17 +1,15 @@
-import styles from "./SidebarPanel.module.scss";
-import * as MyIcons from "react-icons/bs";
+import Image from "next/image";
 import clsx from "clsx";
+import styles from "./SidebarPanel.module.scss";
 
 type SidebarPanelProp = {
-  icon: keyof typeof MyIcons;
+  icon: string;
   name: string;
   active?: boolean;
   onClick?: () => void;
 };
 
 const SidebarPanel = ({ icon, name, active, onClick }: SidebarPanelProp) => {
-  const Icon = MyIcons[icon];
-
   return (
     <div
       className={clsx(
@@ -20,7 +18,13 @@ const SidebarPanel = ({ icon, name, active, onClick }: SidebarPanelProp) => {
       )}
       onClick={onClick}
     >
-      <Icon className={styles.sideBarIcon} size={20} />
+      <Image
+        src={`/assets/images/sidebar-icons/${icon}`}
+        alt={name}
+        width={16}
+        height={16}
+        className={styles.sideBarIcon}
+      />
       <p className={styles.sideBarText}>{name}</p>
     </div>
   );
