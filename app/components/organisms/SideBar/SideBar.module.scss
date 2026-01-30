@@ -9,7 +9,7 @@
 
 .scrollArea {
   flex: 1;
-  padding: 40px 0;
+  padding: 0px 0px 40px 0px;
   overflow-y: auto;
 }
 
@@ -23,4 +23,28 @@
   padding-left: 20px;
   font-size: 0.75rem;
   color: #545f7d;
+}
+
+.organization {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 20px 30px;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #213f7d;
+  cursor: pointer;
+}
+
+.chevron {
+  margin-left: auto;
+  opacity: 0.6;
+}
+
+.sectionHeaders{
+  color: #213f7d;
+  cursor: pointer;
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding-left: 20px;
 }
