@@ -39,6 +39,7 @@ function Page() {
           />
         }
         setSidebarOpen={setSidebarOpen}
+        userActions={  <h1 className={styles.title}>Users</h1>}
         sidebar={<SideBar />}
         sidebarOpen={sidebarOpen}
         statusCards={statusCards.map(({ color, icon, mainText, title }) => (
