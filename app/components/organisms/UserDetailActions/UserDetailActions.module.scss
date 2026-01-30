@@ -5,12 +5,26 @@
   align-items: center;
   padding: 24px 0;
   width: 100%;
+
+  /* Mobile: stack vertically */
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 16px 0;
+  }
 }
 
 .left {
   display: flex;
   flex-direction: column;
+  padding: 0px;
   gap: 12px;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    padding-left: 25px;
+  }
 }
 
 .backLink {
@@ -31,13 +45,29 @@
   font-size: 24px;
   font-weight: 500;
   color: #213f7d;
+  display: inline;
+  @media (max-width: 768px) {
+    display: none;
+    font-size: 20px;
+  }
 }
 
 .actions {
   display: flex;
   gap: 16px;
 
-  /* 👇 scoped button styles */
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 12px;
+
+    button {
+      width: fit-content;
+      text-align: center;
+    }
+  }
+
   button {
     padding: 12px 24px;
     font-size: 14px;
@@ -53,7 +83,6 @@
 .blacklist {
   border: 1px solid #e4033b;
   color: #e4033b;
-
   &:hover {
     background-color: rgba(228, 3, 59, 0.05);
   }
@@ -62,7 +91,6 @@
 .activate {
   border: 1px solid #39cdcc;
   color: #39cdcc;
-
   &:hover {
     background-color: rgba(57, 205, 204, 0.08);
   }
