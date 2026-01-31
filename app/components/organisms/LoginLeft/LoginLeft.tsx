@@ -1,5 +1,5 @@
 import Image from "next/image";
-import styles from "./LoginLeft.module.scss"
+import styles from "./LoginLeft.module.scss";
 
 const LoginLeft = () => {
   return (
@@ -14,7 +14,7 @@ const LoginLeft = () => {
         />
 
         <Image
-          src="/assets/images/auth-page-image.png"
+          src="/assets/images/auth-page-image-1.png"
           alt="Auth illustration"
           className={styles.mainImage}
           width={550}
@@ -24,6 +24,6 @@ const LoginLeft = () => {
       </div>
     </div>
   );
-}
+};
 
-export {LoginLeft};
+export { LoginLeft };
