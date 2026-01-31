@@ -59,3 +59,30 @@
   font-size: 1.125rem;
 }
 
+.dropDown {
+  background: #fff;
+  border-radius: 6px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  z-index: 9999;
+
+  display: flex;
+  flex-direction: column;
+  padding: 20px 0;
+  min-width: 160px;
+  color:#545F7D;
+  gap: 5;
+}
+
+.dropDownChild {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 5;
+
+
+  &:hover {
+    background-color: #f2f4f7;
+  }
+}
+

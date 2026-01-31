@@ -59,7 +59,6 @@ function Page() {
               console.log("Clicked row:", user);
               sessionStorage.setItem("selectedUser", JSON.stringify(user));
               saveProfileDetailsToStorage(profileSections);
-              router.push(`/dashboard/user`);
             }}
           />
         }
